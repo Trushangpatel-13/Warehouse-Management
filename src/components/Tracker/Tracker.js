@@ -9,7 +9,7 @@ class Tracker extends React.Component {
 
     onTrack = async (event) => {
         event.preventDefault();
-        const response = await axios.get(`http://localhost:8080/api/get_info_of_product/${this.props.serial_no}`);
+        const response = await axios.get(`https://warehouse-management-backend.herokuapp.com/api/get_info_of_product/${this.props.serial_no}`);
         if (response.data === null) alert("Enter valid serial number!!!");
         this.props.selectedProductDetails(response.data);
     }
